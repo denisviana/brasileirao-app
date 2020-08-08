@@ -5,5 +5,6 @@ package com.deniscosta.brasileirao.di
  */
 
 val appModules = listOf(
-    viewModelModule
+    viewModelModule,
+    networkModule
 )
