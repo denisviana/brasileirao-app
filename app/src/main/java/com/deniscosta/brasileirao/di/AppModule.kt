@@ -6,5 +6,7 @@ package com.deniscosta.brasileirao.di
 
 val appModules = listOf(
     viewModelModule,
-    networkModule
+    networkModule,
+    repositoryModule,
+    dataSourceModule
 )
