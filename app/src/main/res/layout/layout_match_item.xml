@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/lightGray"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="10dp"
+    android:layout_height="150dp">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/topGuideline"
+            app:layout_constraintGuide_begin="10dip"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leftGuideline"
+            app:layout_constraintGuide_begin="16dip"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rightGuideline"
+            app:layout_constraintGuide_end="16dip"
+            android:orientation="vertical"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomGuideline"
+            app:layout_constraintGuide_end="10dp"
+            android:orientation="horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/centerGuideline"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="vertical"/>
+
+        <ImageView
+            app:layout_constraintHorizontal_bias="0.4"
+            android:id="@+id/homeTeamEmblem"
+            android:src="@drawable/optimised"
+            app:layout_constraintTop_toBottomOf="@id/topGuideline"
+            app:layout_constraintBottom_toTopOf="@id/bottomGuideline"
+            app:layout_constraintStart_toEndOf="@id/leftGuideline"
+            app:layout_constraintEnd_toStartOf="@id/tvScoreBoard"
+            android:layout_width="70dp"
+            android:layout_height="70dp"/>
+
+        <TextView
+            app:layout_constraintHorizontal_bias="0.4"
+            android:id="@+id/homeTeam"
+            app:layout_constraintStart_toEndOf="@id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@id/homeTeamEmblem"
+            app:layout_constraintEnd_toStartOf="@id/tvScoreBoard"
+            android:text="Fortaleza"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            app:layout_constraintVertical_bias="0"
+            android:id="@+id/tvGameLocation"
+            android:text="CASTELÃO (CE) - Sáb 08/08/2020 - 19:00"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/topGuideline"
+            app:layout_constraintStart_toEndOf="@id/leftGuideline"
+            app:layout_constraintEnd_toStartOf="@id/rightGuideline"
+            app:layout_constraintBottom_toTopOf="@id/tvScoreBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:theme="@style/ScoreBoardFontStyle"
+            android:id="@+id/tvScoreBoard"
+            android:text="2 : 1"
+            android:textSize="40sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/topGuideline"
+            app:layout_constraintStart_toEndOf="@id/leftGuideline"
+            app:layout_constraintEnd_toStartOf="@id/rightGuideline"
+            app:layout_constraintBottom_toTopOf="@id/bottomGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            app:layout_constraintHorizontal_bias="0.6"
+            android:id="@+id/awayTeamEmblem"
+            android:src="@drawable/athletico_pr"
+            app:layout_constraintTop_toBottomOf="@id/topGuideline"
+            app:layout_constraintBottom_toTopOf="@id/bottomGuideline"
+            app:layout_constraintStart_toEndOf="@id/tvScoreBoard"
+            app:layout_constraintEnd_toStartOf="@id/rightGuideline"
+            android:layout_width="70dp"
+            android:layout_height="70dp"/>
+
+        <TextView
+            app:layout_constraintHorizontal_bias="0.6"
+            android:id="@+id/awayTeam"
+            app:layout_constraintStart_toEndOf="@id/tvScoreBoard"
+            app:layout_constraintTop_toBottomOf="@id/awayTeamEmblem"
+            app:layout_constraintEnd_toStartOf="@id/rightGuideline"
+            android:text="Athletico PR"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

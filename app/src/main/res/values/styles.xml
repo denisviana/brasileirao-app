@@ -5,6 +5,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/baloo_tamma2</item>
+    </style>
+    
+    <style name="ScoreBoardFontStyle" parent="@android:style/TextAppearance.Large">
+        <item name="fontFamily">@font/bebas_neue</item>
     </style>
 
 </resources>
