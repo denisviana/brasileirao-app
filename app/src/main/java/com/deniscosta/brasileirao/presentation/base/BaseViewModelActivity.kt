@@ -1,9 +1,7 @@
 package com.deniscosta.brasileirao.presentation.base
-
 import ViewDiffContainer
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import com.deniscosta.brasileirao.presentation.base.BaseActivity
 import kotlin.reflect.KFunction
 import kotlin.reflect.KProperty0
 

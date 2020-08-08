@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:layout_margin="5dp"
     android:background="@drawable/round_item_state"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:id="@+id/roundSelector"
-    android:paddingHorizontal="16dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:paddingHorizontal="20dp"
     android:gravity="center"
-    android:layout_height="35dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="40dp">
 
     <TextView
         android:id="@+id/tvRound"

@@ -1,5 +1,7 @@
 package com.deniscosta.brasileirao.di
 
+import com.deniscosta.brasileirao.presentation.features.home.HomeViewModel
+import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 /**
@@ -8,5 +10,5 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
 
-
+    viewModel{HomeViewModel()}
 }

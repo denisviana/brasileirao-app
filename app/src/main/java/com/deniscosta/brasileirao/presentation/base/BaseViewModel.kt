@@ -2,7 +2,6 @@ package com.deniscosta.brasileirao.presentation.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import thedantas.vestconnect.base.SingleLiveEvent
 
 abstract class BaseViewModel<S, C> : ViewModel() {
 

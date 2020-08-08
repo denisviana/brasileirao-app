@@ -26,7 +26,9 @@ data class MatchEntity(
     @Json(name = "time_visitante_initials")
     val awayTeamInitials: String,
     @Json(name = "placar_time_visitante")
-    val awayTeamScoreGoals : String,
+    val awayTeamScoredGoals : String,
+    @Json(name = "time_visitante_escudo")
+    val awayTeamEmblem: String,
     @Json(name = "rodada")
     val round : Int,
     @Json(name = "foiJogado")
