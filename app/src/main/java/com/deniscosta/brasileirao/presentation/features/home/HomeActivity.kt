@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.deniscosta.brasileirao.R
+import com.deniscosta.brasileirao.domain.entity.MatchEntity
 import com.deniscosta.brasileirao.domain.entity.RoundEntity
 import com.deniscosta.brasileirao.presentation.base.BaseViewModelActivity
 import com.deniscosta.brasileirao.presentation.features.home.adapters.MatchAdapter
@@ -53,21 +54,23 @@ class HomeActivity : BaseViewModelActivity(), RoundAdapter.OnItemClick {
 
     private fun render(state: HomeState){
         state::loading partTo ::renderLoading
+        state::matches partTo ::renderMatches
+        state::rounds partTo ::renderRounds
     }
 
     private fun renderLoading(isLoading : Boolean){
 
     }
 
+    private fun renderRounds(rounds : List<RoundEntity>){
+        roundAdapter.setNewData(rounds)
+    }
+
+    private fun renderMatches(matches : List<MatchEntity>){
+        matchAdapter.setNewData(matches)
+    }
+
     private fun handle(command : HomeCommand){
-        when(command){
-            is HomeCommand.GetRoundsSuccessful -> {
-                roundAdapter.setNewData(command.rounds)
-            }
-            is HomeCommand.GetMatchesByRoundSuccessful -> {
-                matchAdapter.setNewData(command.matches)
-            }
-        }
     }
 
     override fun onRoundClickListener(item: RoundEntity, position: Int) {

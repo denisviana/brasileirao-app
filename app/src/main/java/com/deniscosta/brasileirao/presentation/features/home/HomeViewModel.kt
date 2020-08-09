@@ -20,6 +20,7 @@ class HomeViewModel(
 ) : BaseViewModel<HomeState, HomeCommand>() {
 
     init {
+        newState(HomeState())
         val rounds = mutableListOf<RoundEntity>()
         for (i in 1..38){
             rounds.add(
@@ -33,35 +34,32 @@ class HomeViewModel(
 
         getMatches(round = 1)
 
-        command.value = HomeCommand.GetRoundsSuccessful(rounds)
     }
 
     fun getMatches(round : Int){
 
+        newState{ copy( loading = true)}
+
         viewModelScope.launch {
 
-            withContext(Dispatchers.Default) {
+            withContext(Dispatchers.Main) {
                 try {
                     val result = getMatchesByRoundUseCase(round)
-                    withContext(Dispatchers.Main){
-                        command.value =
-                            HomeCommand.GetMatchesByRoundSuccessful(matches = result.response.toMutableList())
-                    }
+                    newState{ copy(loading = false, matches = result) }
                 } catch (e: Exception) {
+                    newState{ copy( loading = false)}
                     Timber.e(e)
                 }
             }
-
         }
     }
 
 }
 
 data class HomeState(
-    val loading : Boolean = false
+    val loading : Boolean = false,
+    val rounds : List<RoundEntity> = emptyList(),
+    val matches : List<MatchEntity> = emptyList()
 )
 
-sealed class HomeCommand{
-    data class GetRoundsSuccessful(val rounds : MutableList<RoundEntity>) : HomeCommand()
-    data class GetMatchesByRoundSuccessful(val matches : MutableList<MatchEntity>) : HomeCommand()
-}
+sealed class HomeCommand

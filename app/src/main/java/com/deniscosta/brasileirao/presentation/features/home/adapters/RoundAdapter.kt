@@ -13,7 +13,7 @@ import com.deniscosta.brasileirao.domain.entity.RoundEntity
  * denisvcosta@gmail.com
  */
 class RoundAdapter(
-    data : MutableList<RoundEntity>,
+    data : List<RoundEntity>,
     private val listener : OnItemClick
 ) : BaseQuickAdapter<RoundEntity, BaseViewHolder>(R.layout.layout_round_item, data) {
 

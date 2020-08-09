@@ -12,8 +12,9 @@ class GetMatchesByRoundUseCase(
     private val matchRepository: MatchRepository
 ) {
 
-    suspend operator fun invoke(round: Int) : MatchesResponse {
-        return matchRepository.getMatchesByRound(round)
+    suspend operator fun invoke(round: Int) : List<MatchEntity> {
+        val matchesResponse = matchRepository.getMatchesByRound(round)
+        return matchesResponse.response
     }
 
 }
