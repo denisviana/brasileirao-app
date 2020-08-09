@@ -8,5 +8,6 @@ val appModules = listOf(
     viewModelModule,
     networkModule,
     repositoryModule,
-    dataSourceModule
+    dataSourceModule,
+    useCaseModule
 )

@@ -17,11 +17,10 @@ import java.util.concurrent.TimeUnit
  * denisvcosta@gmail.com
  */
 
-const val HOST = "https://us-central1-brasileirao-api.cloudfunctions.net/"
 
 val networkModule = module {
     single { createOkHttpClient() }
-    single { provideRetrofit(get(), HOST, get()) }
+    single { provideRetrofit(get(), "https://us-central1-brasileirao-api.cloudfunctions.net/", get()) }
     single { provideRestApiService(get()) }
     factory { provideMoshi() }
     factory { provideMoshiConverterFactory(get()) }

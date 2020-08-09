@@ -1,6 +1,7 @@
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.deniscosta.brasileirao.presentation.base.BaseViewModel
+import com.deniscosta.brasileirao.presentation.base.ViewDiffContainer
 import kotlin.reflect.KFunction
 import kotlin.reflect.KProperty0
 

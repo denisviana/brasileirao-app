@@ -64,11 +64,14 @@ class HomeActivity : BaseViewModelActivity(), RoundAdapter.OnItemClick {
             is HomeCommand.GetRoundsSuccessful -> {
                 roundAdapter.setNewData(command.rounds)
             }
+            is HomeCommand.GetMatchesByRoundSuccessful -> {
+                matchAdapter.setNewData(command.matches)
+            }
         }
     }
 
     override fun onRoundClickListener(item: RoundEntity, position: Int) {
-
+        homeViewModel.getMatches(item.round)
     }
 
 }

@@ -1,6 +1,7 @@
 package com.deniscosta.brasileirao.data.repository
 
 import com.deniscosta.brasileirao.data.data_source.match.remote.MatchRemoteDataSource
+import com.deniscosta.brasileirao.data.model.remote.MatchesResponse
 import com.deniscosta.brasileirao.domain.entity.MatchEntity
 import com.deniscosta.brasileirao.domain.repository.MatchRepository
 
@@ -13,7 +14,7 @@ class MatchRepositoryImpl(
 ) : MatchRepository {
 
 
-    override suspend fun getMatchesByRound(round: Int): List<MatchEntity> =
+    override suspend fun getMatchesByRound(round: Int): MatchesResponse =
         remoteDataSource.getMatchesByRound(round)
 
 }

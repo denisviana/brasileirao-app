@@ -1,3 +1,4 @@
+package com.deniscosta.brasileirao.presentation.base
 
 interface ViewDiffContainer {
     val updated: HashMap<String, Any?>

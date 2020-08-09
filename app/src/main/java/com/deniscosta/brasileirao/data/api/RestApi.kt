@@ -1,6 +1,6 @@
 package com.deniscosta.brasileirao.data.api
 
-import com.deniscosta.brasileirao.domain.entity.MatchEntity
+import com.deniscosta.brasileirao.data.model.remote.MatchesResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -10,7 +10,7 @@ import retrofit2.http.Query
  */
 interface RestApi {
 
-    @GET
-    suspend fun getMatchesByRound(@Query("round") round: Int) : List<MatchEntity>
+    @GET("getMatchesByRound")
+    suspend fun getMatchesByRound(@Query("round") round: Int) : MatchesResponse
 
 }

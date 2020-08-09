@@ -1,5 +1,4 @@
 package com.deniscosta.brasileirao.presentation.base
-import ViewDiffContainer
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import kotlin.reflect.KFunction
